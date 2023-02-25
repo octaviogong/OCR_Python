@@ -5,7 +5,7 @@ import cv2 as cv
 
 
 #PDF a imagen JPEG
-poppler_path = r"C:\Users\Octavio\Downloads\poppler-0.68.0\poppler-0.68.0\bin"
+poppler_path = r"C:\Users\Octavio\Downloads\Release-23.01.0-0\poppler-23.01.0\Library\bin"
 pdf_path = r"C:\OCR_Python\HC JARAL\HC JARAL\A0207.pdf"
 saving_folder = r"C:\OCR_Python"
 
