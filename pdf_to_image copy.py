@@ -7,10 +7,10 @@ import cv2 as cv
 #PDF a imagen JPEG
 poppler_path = r"C:\Users\Octavio\Downloads\poppler-0.68.0\poppler-0.68.0\bin"
 pdf_path = r"C:\OCR_Python\HC JARAL\HC JARAL\A0207.pdf"
-
+saving_folder = r"C:\OCR_Python"
 
 pages = convert_from_path(pdf_path = pdf_path, poppler_path = poppler_path)
-saving_folder = r"C:\OCR_Python"
+
 c = 1
 for page in pages:
     img_name = f"img{c}.jpeg"
