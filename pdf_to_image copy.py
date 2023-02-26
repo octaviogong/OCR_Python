@@ -11,9 +11,12 @@ saving_folder = r"C:\OCR_Python"
 
 pages = convert_from_path(pdf_path = pdf_path, poppler_path = poppler_path)
 
+            #Obtener el nombre del PDF
+pdf_name = pdf_path[pdf_path.rfind(".pdf")-5:]
+
 c = 1
 for page in pages:
-    img_name = f"img{c}.jpeg"
+    img_name = f"{pdf_name[:-4]}.jpeg"
     page.save(os.path.join(saving_folder,img_name),"JPEG")
     c+=1
 
@@ -25,14 +28,14 @@ img_cv = cv.cvtColor(img_cv, cv.COLOR_RGB2GRAY)
 
 adaptative = cv.adaptiveThreshold(img_cv,255, cv.ADAPTIVE_THRESH_GAUSSIAN_C,cv.THRESH_BINARY,201,5)
 
-cv.imwrite("Adapt.jpeg",adaptative)
+cv.imwrite(f"{img_name}",adaptative)
 
 #Extracción del texto
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 texto = pytesseract.image_to_string(adaptative)
 
 #Archivo txt de salida
-salida_txt = open('img1.txt','w')
+salida_txt = open(f'{img_name[:-4]}'+'txt','w')
 salida_txt.write(texto)
 salida_txt.close()
 
