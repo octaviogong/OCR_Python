@@ -2,12 +2,13 @@ from pdf2image import convert_from_path
 import os
 import pytesseract
 import cv2 as cv
+import sys
 
 
 #PDF a imagen JPEG
-poppler_path = r"C:\Users\Octavio\Downloads\Release-23.01.0-0\poppler-23.01.0\Library\bin"
-pdf_path = r"C:\OCR_Python\HC JARAL\HC JARAL\A0207.pdf"
-saving_folder = r"C:\OCR_Python"
+poppler_path = str(sys.argv[1])
+pdf_path = str(sys.argv[2])
+saving_folder = str(sys.argv[3])
 
 pages = convert_from_path(pdf_path = pdf_path, poppler_path = poppler_path)
 
