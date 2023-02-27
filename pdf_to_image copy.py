@@ -18,7 +18,7 @@ pdf_name = pdf_path[pdf_path.rfind(".pdf")-5:]
 c = 1
 for page in pages:
     img_name = f"{pdf_name[:-4]}.jpeg"
-    page.save(os.path.join(saving_folder,img_name),"JPEG")
+    page.save(os.path.join(saving_folder,img_name),"JPEG") #Supported file formats are jpeg, png, tiff and ppm.
     c+=1
 
 
