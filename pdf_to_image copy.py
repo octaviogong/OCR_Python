@@ -8,7 +8,7 @@ import sys
 #PDF a imagen JPEG
 poppler_path = str(sys.argv[1])
 pdf_path = str(sys.argv[2])
-saving_folder = str(sys.argv[3])
+saving_folder = pdf_path[:-4]+'.jpge'
 
 pages = convert_from_path(pdf_path = pdf_path, poppler_path = poppler_path)
 
