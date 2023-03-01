@@ -9,7 +9,7 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 poppler_path = r"C:\Users\Octavio\Downloads\poppler-0.68.0\poppler-0.68.0\bin"
 pdf_path = r"C:\OCR_Python\4.pdf"
 
-pages = convert_from_path(pdf_path = pdf_path, poppler_path = poppler_path)
+pages = convert_from_path(pdf_path = pdf_path, poppler_path = poppler_path) #size=(900, None)
 
 saving_folder = r"C:\OCR_Python"
 
