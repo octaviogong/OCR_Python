@@ -38,6 +38,7 @@ if path.exists(saving_folder+'\\'+img_name):
 #Extracción del texto
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 texto = pytesseract.image_to_string(adaptative)
+texto.remove("\n")
 
 #Archivo txt de salida
 salida_txt = open(f'{img_name[:-4]}'+'txt','w',)
